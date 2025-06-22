@@ -4,7 +4,7 @@
 
 A cutting-edge eCommerce web application built with modern web technologies, featuring a futuristic glassmorphism design, real-time functionality, and progressive web app capabilities.
 
-#(https://ecommerceappsee.netlify.app/) 🚀 Live Demo
+##[🚀 Live Demo](https://ecommerceappsee.netlify.app/) 
 
 Open with VS Code Live Server for instant preview!
 
