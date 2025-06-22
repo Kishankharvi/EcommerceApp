@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoShop - Futuristic eCommerce</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2300ffff'/%3E%3Ctext x='16' y='16' font-family='Arial' font-size='12' fill='%23000' text-anchor='middle' dy='0.3em'%3ENS%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#00ffff">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-spinner"></div>
+        <h2 class="loading-text">NeoShop</h2>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <h1 class="logo-text">NeoShop</h1>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search products..." class="search-input">
+                <button class="search-btn" id="search-btn">
+                    <span class="search-icon">🔍</span>
+                </button>
+            </div>
+
+            <div class="nav-actions">
+                <button class="nav-btn" id="cart-btn">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <button class="nav-btn" id="profile-btn" style="display: none;">
+                    <span class="profile-icon">👤</span>
+                </button>
+                <button class="nav-btn" id="auth-btn">Login</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <!-- Home Page -->
+        <section id="home-page" class="page active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">Welcome to the Future of Shopping</h1>
+                    <p class="hero-subtitle">Discover cutting-edge products with next-gen technology</p>
+                    <button class="cta-button" id="shop-now-btn">Shop Now</button>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-elements">
+                        <div class="floating-card"></div>
+                        <div class="floating-card"></div>
+                        <div class="floating-card"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="featured-section">
+                <h2 class="section-title">Featured Products</h2>
+                <div class="products-grid" id="featured-products">
+                    <!-- Featured products will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Page -->
+        <section id="products-page" class="page">
+            <div class="page-header">
+                <h1 class="page-title">All Products</h1>
+                <div class="filters">
+                    <select id="category-filter" class="filter-select">
+                        <option value="">All Categories</option>
+                    </select>
+                    <select id="sort-filter" class="filter-select">
+                        <option value="name">Sort by Name</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+            <div class="products-grid" id="all-products">
+                <!-- All products will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Product Detail Page -->
+        <section id="product-detail-page" class="page">
+            <div class="product-detail-container" id="product-detail-container">
+                <!-- Product details will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Cart Page -->
+        <section id="cart-page" class="page">
+            <div class="cart-container">
+                <h1 class="page-title">Shopping Cart</h1>
+                <div class="cart-content" id="cart-content">
+                    <!-- Cart items will be loaded here -->
+                </div>
+                <div class="cart-summary" id="cart-summary">
+                    <!-- Cart summary will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Checkout Page -->
+        <section id="checkout-page" class="page">
+            <div class="checkout-container">
+                <h1 class="page-title">Checkout</h1>
+                <form class="checkout-form" id="checkout-form">
+                    <div class="checkout-section">
+                        <h3>Shipping Information</h3>
+                        <div class="form-group">
+                            <input type="text" id="shipping-name" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="shipping-address" placeholder="Address" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="text" id="shipping-city" placeholder="City" required>
+                            <input type="text" id="shipping-zip" placeholder="ZIP Code" required>
+                        </div>
+                    </div>
+                    
+                    <div class="checkout-section">
+                        <h3>Order Summary</h3>
+                        <div id="checkout-summary">
+                            <!-- Order summary will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="checkout-btn">Proceed to Payment</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Auth Pages -->
+        <section id="login-page" class="page">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <h2 class="auth-title">Login</h2>
+                    <form class="auth-form" id="login-form">
+                        <div class="form-group">
+                            <input type="email" id="login-email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="login-password" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="auth-btn">Login</button>
+                        <button type="button" class="google-btn" id="google-login">
+                            <span class="google-icon">G</span>
+                            Continue with Google
+                        </button>
+                    </form>
+                    <p class="auth-switch">
+                        Don't have an account? 
+                        <a href="#" id="show-register">Register</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="register-page" class="page">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <h2 class="auth-title">Register</h2>
+                    <form class="auth-form" id="register-form">
+                        <div class="form-group">
+                            <input type="text" id="register-name" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="register-email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="register-password" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="auth-btn">Register</button>
+                        <button type="button" class="google-btn" id="google-register">
+                            <span class="google-icon">G</span>
+                            Continue with Google
+                        </button>
+                    </form>
+                    <p class="auth-switch">
+                        Already have an account? 
+                        <a href="#" id="show-login">Login</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Page -->
+        <section id="profile-page" class="page">
+            <div class="profile-container">
+                <h1 class="page-title">User Profile</h1>
+                <div class="profile-content" id="profile-content">
+                    <!-- Profile content will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <div class="modal" id="notification-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-notification">&times;</span>
+            <div class="modal-body" id="notification-body">
+                <!-- Notification content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notification-container" class="notification-container"></div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+    
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <!-- App Scripts in correct order -->
+    <script src="js/config.js"></script>
+    <script src="js/firebase-service.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/auth-manager.js"></script>
+    <script src="js/product-manager.js"></script>
+    <script src="js/cart-manager.js"></script>
+    <script src="js/checkout-manager.js"></script>
+    <script src="js/profile-manager.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
